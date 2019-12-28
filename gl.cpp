@@ -1,5 +1,6 @@
 #include <iostream>
 #include <math.h>
+#define _USE_MATH_DEFINES
 #include <GL/glew.h>
 #include <GLFW/glfw3.h>
 #include "shader.h"
@@ -170,6 +171,9 @@ int main(void)
 
 
 
+	for (int i = 0; i < 360; i++) {
+		std::cout << "DEG= " << i << "\t" << sin(i) << std::endl;
+	}
 
 
 
@@ -177,6 +181,7 @@ int main(void)
 		processInput(window);
 		glClearColor(0.2f, 0.3f, 0.3f, 1.0f);
 		glClear(GL_COLOR_BUFFER_BIT);
+
 
 		shader.use();
 		//shader.setFloat("ourColor",1.0f);
